@@ -37,3 +37,4 @@ Further documentation for Wrangler can be found [here](https://developers.cloudf
 
 #### Worker whitelisting
 Setup worker whitelist in "src/lib/utils.js"
+And in wrangler.toml file

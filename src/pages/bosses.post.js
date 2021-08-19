@@ -14,7 +14,7 @@ const bossPost = async request => {
 	}
 
 	// Incorrect key supplied. Reject the request.
-	return response.notFound()
+	else return response.notFound()
 }
 
 export default bossPost

@@ -4,14 +4,18 @@ export const html = html =>
 	new Response(html, {
 		headers: {
 			'content-type': 'text/html;charset=UTF-8',
-			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
 			Vary: 'Origin',
 		},
 	})
 
 export const notFound = () =>
 	new Response(notFoundHtml, {
-		headers: { 'content-type': 'text/html' },
+		headers: {
+			'content-type': 'text/html',
+			'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+			Vary: 'Origin',
+		},
 		status: 404,
 	})
 
@@ -21,21 +25,25 @@ export const forbidden = html =>
 		statusText: 'Forbidden',
 		headers: {
 			'Content-Type': 'text/html',
-			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
 			Vary: 'Origin',
 		},
 	})
 
 export const text = text =>
 	new Response(text, {
-		headers: { 'content-type': 'text/plain' },
+		headers: {
+			'content-type': 'text/plain',
+			'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+			Vary: 'Origin',
+		},
 	})
 
 export const json = json =>
 	new Response(json, {
 		headers: {
 			'content-type': 'application/json',
-			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
 			Vary: 'Origin',
 		},
 	})

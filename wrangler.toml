@@ -8,3 +8,13 @@ webpack_config = "webpack.config.js"
 kv_namespaces = [
     { binding = "BOSSES", id = "722c9229c21f4d17a060f70838e5ec70" } # put your BOSSES kv_id here
 ]
+
+# [secrets]
+# PRESHARED_AUTH_HEADER_KEY
+# PRESHARED_AUTH_HEADER_VALUE
+
+[vars]
+ALLOWED_ORIGIN = "*"
+
+[env.production.vars]
+ALLOWED_ORIGIN = "https://gamezbd-info.pages.dev"

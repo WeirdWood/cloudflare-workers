@@ -20,7 +20,8 @@ export const isListed = (uri, listing) => {
 	return ret
 }
 
-export const whitelistOrg = ['gamezbd-info.pages.dev', '127.0.0.1']
+//export const whitelistOrg = ['gamezbd-info.pages.dev']
+//export const whitelistOrg = ['.*']
 
 export const whitelistUrl = [
 	'forum.gameznetwork.com/forums/',

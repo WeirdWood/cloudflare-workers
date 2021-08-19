@@ -1,8 +1,8 @@
-import * as responses from './lib/responses'
+//import * as responses from './lib/responses'
 import Router from './lib/router'
 import notFound from './pages/404'
 import { getRoutes } from './lib/auto-routes'
-import { isListed, whitelistOrg } from './lib/utils'
+//import { isListed, whitelistOrg } from './lib/utils'
 
 const routes = getRoutes()
 const router = new Router()
@@ -19,21 +19,25 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
-	var orig = request.headers.get('Origin')
+	// var orig = request.headers.get('Origin')
 
-	if (
-		new URL(request.url).pathname.match('/bosses/?') &&
-		request.method === 'POST' &&
-		orig === null
-	) {
-		const response = await router.route(request)
-		return response
-	} else if (isListed(orig, whitelistOrg)) {
-		const response = await router.route(request)
-		return response
-	} else {
-		return responses.forbidden(
-			'Your origin is not allowed to access this worker!',
-		)
-	}
+	// if (
+	// 	new URL(request.url).pathname.match('/bosses/?') &&
+	// 	request.method === 'POST' &&
+	// 	orig === null
+	// ) {
+	// 	const response = await router.route(request)
+	// 	return response
+	// } else if (isListed(orig, whitelistOrg)) {
+	// 	const response = await router.route(request)
+	// 	return response
+	// } else {
+	// 	console.log(orig)
+	// 	return responses.forbidden(
+	// 		'Your origin is not allowed to access this worker!',
+	// 	)
+	// }
+
+	const response = await router.route(request)
+	return response
 }
