@@ -1,12 +1,5 @@
 import { whitelistUrl, isListed } from '../lib/utils'
-
-const responseinit = {
-	headers: {
-		'content-type': 'text/html;charset=UTF-8',
-		'Access-Control-Allow-Origin': '*',
-		Vary: 'Origin',
-	},
-}
+import * as response from '../lib/responses'
 
 async function textWIthUrl(response) {
 	// we only want responses which are text
@@ -61,18 +54,10 @@ const cors = async request => {
 		}
 
 		return await Promise.allSettled(responsearr).then(() => {
-			return new Response(results, responseinit)
+			return response.html(results)
 		})
 	} else {
-		return new Response('Your URLs are not allowed for this CORS server!', {
-			status: 403,
-			statusText: 'Forbidden',
-			headers: {
-				'Content-Type': 'text/html',
-				'Access-Control-Allow-Origin': '*',
-				Vary: 'Origin',
-			},
-		})
+		return response.forbidden('Your URLs are not allowed for this CORS server!')
 	}
 }
 

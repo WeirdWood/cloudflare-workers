@@ -1,3 +1,4 @@
+import * as responses from './lib/responses'
 import Router from './lib/router'
 import notFound from './pages/404'
 import { getRoutes } from './lib/auto-routes'
@@ -31,14 +32,8 @@ async function handleRequest(request) {
 		const response = await router.route(request)
 		return response
 	} else {
-		return new Response('Your origin is not allowed to access this worker!', {
-			status: 403,
-			statusText: 'Forbidden',
-			headers: {
-				'Content-Type': 'text/html',
-				'Access-Control-Allow-Origin': '*',
-				Vary: 'Origin',
-			},
-		})
+		return responses.forbidden(
+			'Your origin is not allowed to access this worker!',
+		)
 	}
 }
