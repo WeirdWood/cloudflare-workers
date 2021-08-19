@@ -1,4 +1,4 @@
-name = "cloudflare-workers"
+name = "cloudflare-workers-dev"
 type = "webpack"
 account_id = "08bf68295952bbf06870b876cdf80ef3" # put your account_id here
 workers_dev = true
@@ -16,5 +16,11 @@ kv_namespaces = [
 [vars]
 ALLOWED_ORIGIN = "*"
 
+
+[env.production]
+name = "cloudflare-workers"
+kv_namespaces = [
+    { binding = "BOSSES", id = "722c9229c21f4d17a060f70838e5ec70" } # put your BOSSES kv_id here
+]
 [env.production.vars]
 ALLOWED_ORIGIN = "https://gamezbd-info.pages.dev"
