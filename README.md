@@ -1,7 +1,8 @@
 # 👷 Cloudflare Worker
 
 Cloudflare Worker code for https://gamezbd-info.pages.dev
-This project also need https://github.com/WeirdWood/gamez-telegram-scraper to be deployed
+
+This project also needs https://github.com/WeirdWood/gamez-telegram-scraper to be deployed.
 
 #### Wrangler
 
