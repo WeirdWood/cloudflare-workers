@@ -26,4 +26,5 @@ export const isListed = (uri, listing) => {
 export const whitelistUrl = [
 	'forum.gameznetwork.com/forums/',
 	'status.gamezbd.net/api/getMonitor/7DMKmfmWE6',
+	'api.freshping.io/v1/public-check-state-changes/?check_id=',
 ] // regexp for whitelisted urls
